@@ -15,7 +15,7 @@
            
             @yield('hero')
             
-            </div>
+           
         </div>
         <!-- Navbar & Hero End -->
 
