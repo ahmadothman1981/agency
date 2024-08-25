@@ -1,6 +1,5 @@
-
 @php
-//use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+
   $dir = LaravelLocalization::getCurrentLocale() == 'ar' ? 'assets-admin-rtl' : 'assets-admin';
 @endphp
 
