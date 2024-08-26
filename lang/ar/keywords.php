@@ -12,4 +12,16 @@ return [
     'password' => 'كلمة المرور',
     'login' => 'تسجيل الدخول',
     'Remember me' => 'تذكرني',
+
+    'home' => 'الرئيسية',
+    'services' => 'الخدمات',
+    'Components' => 'العناصر',
+    'title' => 'العنوان',
+    'icon' => 'الايقونة',
+    'action' => 'الاجراءات',
+    'no_data_found' => 'لا يوجد بيانات',
+    'Add New' => 'اضافة جديدة',
+    'add_new_service' => 'اضافة خدمة',
+    'description' => 'الوصف',
+    'submit'=>'حفظ',
 ];
