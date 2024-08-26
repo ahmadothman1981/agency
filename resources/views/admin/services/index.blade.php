@@ -17,8 +17,11 @@
               
               <div class="card shadow">
                     <div class="card-body">
-                     
-                      
+
+                     @if(session()->has('success'))
+                      <div class="alert alert-success">{{session('success')}}</div>
+                      @endif
+
                       <table class="table table-hover">
                         <thead>
                           <tr>
@@ -39,9 +42,14 @@
                             <td>
                             <i class="{{$service->icon}} fa-2x"></i></td>
                             <td>
-                                <a href="" class="btn btn-sm btn-success" ><i class="fe fe-24 fe-edit"></i></a>
-                                <a href="" class="btn btn-sm btn-primary" ><i class="fe fe-24 fe-eye"></i></a>
-                                <a href="" class="btn btn-sm btn-danger" ><i class="fe fe-24 fe-trash-2"></i></a>
+                                <a href="{{route('admin.services.edit', ['service' => $service])}}" class="btn btn-sm btn-success" ><i class="fe fe-24 fe-edit"></i></a>
+                                <a href="{{route('admin.services.show', ['service' => $service])}}" class="btn btn-sm btn-primary" ><i class="fe fe-24 fe-eye"></i></a>
+                               <form method="POST" action="{{route('admin.services.destroy', ['service' => $service])}}" class="d-inline" id="deleteForm-{{$service->id}}">
+                                @csrf
+                                 @method('DELETE')
+                                <button type="button" class="btn btn-sm btn-danger" onclick="confirmDelete({{$service->id}})"><i class="fe fe-24 fe-trash-2"></i></button>
+                                </form> 
+                                  
                             </td>
                             
                           </tr>
@@ -62,5 +70,11 @@
             </div> 
           </div> 
         </div> 
-
+    <script>
+        function confirmDelete(id) {
+          if(confirm("Are you sure you want to delete this record ?")) {
+            document.getElementById('deleteForm-'+id).submit();
+          }
+        }
+    </script>
 @endsection

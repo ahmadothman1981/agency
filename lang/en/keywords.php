@@ -24,4 +24,11 @@ return [
     'add_new_service' => 'Add New Service',
     'description' => 'Description',
     'submit' => 'Submit',
+    'Service created successfully' => 'Service created successfully',
+    'show_service' => 'Show Service',
+    'edit_service' => 'Edit Service',
+    'update'=>'Update',
+    'Service updated successfully'=>'Service updated successfully',
+    'Service deleted successfully'=>'Service deleted successfully',
+    
 ];

@@ -33,7 +33,9 @@ class ServiceController extends Controller
      */
     public function store(StoreServiceRequest $request)
     {
-        //
+        $data=$request->validated();
+        Service::create($data);
+        return redirect()->route('admin.services.index')->with('success', 'Service created successfully');
     }
 
     /**
@@ -41,7 +43,7 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
-        //
+        return view('admin.services.show', get_defined_vars());
     }
 
     /**
@@ -49,7 +51,7 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        //
+       return view('admin.services.edit', get_defined_vars());
     }
 
     /**
@@ -57,7 +59,9 @@ class ServiceController extends Controller
      */
     public function update(UpdateServiceRequest $request, Service $service)
     {
-        //
+        $data = $request->validated();
+        $service->update($data);
+        return redirect()->route('admin.services.index')->with('success', 'Service updated successfully');
     }
 
     /**
@@ -65,6 +69,7 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
-        //
+        $service->delete();
+        return redirect()->route('admin.services.index')->with('success', 'Service deleted successfully');
     }
 }

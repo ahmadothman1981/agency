@@ -24,4 +24,11 @@ return [
     'add_new_service' => 'اضافة خدمة',
     'description' => 'الوصف',
     'submit'=>'حفظ',
+    'Service created successfully'=>'تمت اضافة الخدمة بنجاح',
+    'show_service' => 'عرض الخدمة',
+    'edit_service' => 'تعديل الخدمة',
+    'update' => 'تحديث',
+    'Service updated successfully'=>'تم تحديث الخدمة بنجاح',
+    'Service deleted successfully'=>'تم حذف الخدمة بنجاح',
+    
 ];
