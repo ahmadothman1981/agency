@@ -30,5 +30,12 @@ return [
     'update'=>'Update',
     'Service updated successfully'=>'Service updated successfully',
     'Service deleted successfully'=>'Service deleted successfully',
+    'features'=>'Features',
+    'add_new_feature' => 'Add New Feature',
+    'feature created successfully' => 'Feature created successfully',
+    'show_feature' => 'Show Feature',
+    'edit_feature' => 'Edit Feature',
+    'feature updated successfully'=>'Feature updated successfully',
+    'feature deleted successfully'=>'Feature deleted successfully',
     
 ];

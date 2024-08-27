@@ -31,6 +31,8 @@
           <ul class="navbar-nav flex-fill w-100 mb-2">
             <x-side-bar-tab href="{{ route('admin.services.index') }}" 
             icon="fe fe-codesandbox" name="{{ __('keywords.services') }}"></x-side-bar-tab>
+            <x-side-bar-tab href="{{ route('admin.features.index') }}" 
+            icon="fe fe-codesandbox" name="{{ __('keywords.features') }}"></x-side-bar-tab>
           </ul>
 
         </nav>

@@ -30,5 +30,11 @@ return [
     'update' => 'تحديث',
     'Service updated successfully'=>'تم تحديث الخدمة بنجاح',
     'Service deleted successfully'=>'تم حذف الخدمة بنجاح',
-    
+    'features' => 'المميزات',
+    'add_new_feature' => 'اضافة مميزة',
+     'feature created successfully'=>'تمت اضافة المميزة بنجاح',
+     'show_feature' => 'عرض المميزة',
+     'edit_feature' => 'تعديل المميزة',
+     'feature updated successfully'=>'تم تحديث المميزة بنجاح',
+     'feature deleted successfully'=>'تم حذف المميزة بنجاح',
 ];

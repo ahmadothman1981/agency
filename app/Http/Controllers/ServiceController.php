@@ -8,16 +8,22 @@ use App\Http\Requests\UpdateServiceRequest;
 
 class ServiceController extends Controller
 {
+    protected $path ;
+
+    public function __construct()
+    {
+        $this->path = 'admin.services.';
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-
-        $services = Service::paginate(10);
+      
+        $services = Service::paginate(config('pagination.count'));
         //Default to an Empty Collection: If $services can be null, you can default it to an empty collection in the controller:
        // $services = $all ?? collect();
-        return view('admin.services.index', get_defined_vars());
+        return view("{$this->path}index", get_defined_vars());
     }
 
     /**
@@ -25,7 +31,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view('admin.services.create');
+        return view("{$this->path}create");
     }
 
     /**
@@ -35,7 +41,7 @@ class ServiceController extends Controller
     {
         $data=$request->validated();
         Service::create($data);
-        return redirect()->route('admin.services.index')->with('success', 'Service created successfully');
+        return redirect()->route("{$this->path}index")->with('success', 'Service created successfully');
     }
 
     /**
@@ -43,7 +49,7 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
-        return view('admin.services.show', get_defined_vars());
+        return view("{$this->path}show", get_defined_vars());
     }
 
     /**
@@ -51,7 +57,7 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-       return view('admin.services.edit', get_defined_vars());
+       return view("{$this->path}edit", get_defined_vars());
     }
 
     /**
@@ -61,7 +67,7 @@ class ServiceController extends Controller
     {
         $data = $request->validated();
         $service->update($data);
-        return redirect()->route('admin.services.index')->with('success', 'Service updated successfully');
+        return redirect()->route("{$this->path}index")->with('success', 'Service updated successfully');
     }
 
     /**
@@ -70,6 +76,6 @@ class ServiceController extends Controller
     public function destroy(Service $service)
     {
         $service->delete();
-        return redirect()->route('admin.services.index')->with('success', 'Service deleted successfully');
+        return redirect()->route("{$this->path}index")->with('success', 'Service deleted successfully');
     }
 }
