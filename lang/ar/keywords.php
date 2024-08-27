@@ -43,4 +43,9 @@ return [
     'name' => 'الاسم',
     'subject' => 'الموضوع',
     'message' => 'الرسالة',
+    'subscribers' => 'المشتركين',
+    'Subscriber deleted successfully'=>'تم حذف المشترك بنجاح',
+    'testmonials' => 'الشهادات',
+    'position' => 'المنصب',
+    'image' => 'الصورة',
 ];

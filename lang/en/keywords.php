@@ -43,5 +43,10 @@ return [
     'name' => 'Name',
     'subject' => 'Subject',
     'message' => 'Message',
+    'subscribers' => 'Subscribers',
+    'Subscriber deleted successfully'=>'Subscriber deleted successfully',
+    'testmonials'=>'Testmonials',
+    'position' => 'Position',
+    'image' => 'Image',
     
 ];
