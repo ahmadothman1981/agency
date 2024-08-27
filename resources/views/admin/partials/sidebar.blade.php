@@ -29,13 +29,10 @@
             <span>{{__('keywords.Components')}}</span>
           </p>
           <ul class="navbar-nav flex-fill w-100 mb-2">
-          <li class="nav-item w-100">
-              <a class="nav-link" href="{{route('admin.services.index')}}">
-                <i class="fe fe-codesandbox fe-16"></i>
-                <span class="ml-3 item-text">{{__('keywords.services')}}</span>
-              </a>
-            </li>
+            <x-side-bar-tab href="{{ route('admin.services.index') }}" 
+            icon="fe fe-codesandbox" name="{{ __('keywords.services') }}"></x-side-bar-tab>
           </ul>
 
         </nav>
       </aside>
+
