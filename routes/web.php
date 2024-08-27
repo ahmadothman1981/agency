@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FeatureController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -26,6 +27,9 @@ Route::name('admin.')->prefix(LaravelLocalization::setLocale().'/admin')->middle
         });
         Route::controller(FeatureController::class)->group(function () {
             Route::resource('features', FeatureController::class);
+        });
+        Route::controller(MessageController::class)->group(function () {
+            Route::resource('messages', MessageController::class)->only(['index','show','destroy']);
         });
     });
 

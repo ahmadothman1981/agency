@@ -37,5 +37,11 @@ return [
     'edit_feature' => 'Edit Feature',
     'feature updated successfully'=>'Feature updated successfully',
     'feature deleted successfully'=>'Feature deleted successfully',
+    'messages'=>'Messages',
+    'Message deleted successfully'=>'Message deleted successfully',
+    'show_message' => 'Show Message',
+    'name' => 'Name',
+    'subject' => 'Subject',
+    'message' => 'Message',
     
 ];

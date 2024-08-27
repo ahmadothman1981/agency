@@ -37,4 +37,10 @@ return [
      'edit_feature' => 'تعديل المميزة',
      'feature updated successfully'=>'تم تحديث المميزة بنجاح',
      'feature deleted successfully'=>'تم حذف المميزة بنجاح',
+     'messages' => 'الرسائل',
+     'Message deleted successfully'=>'تم حذف الرسالة بنجاح',
+    'show_message' => 'عرض الرسالة',
+    'name' => 'الاسم',
+    'subject' => 'الموضوع',
+    'message' => 'الرسالة',
 ];

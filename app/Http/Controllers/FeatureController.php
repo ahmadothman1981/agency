@@ -27,7 +27,7 @@ class FeatureController extends Controller
      */
     public function create()
     {
-        //
+        return view("{$this->path}create");
     }
 
     /**
@@ -35,7 +35,10 @@ class FeatureController extends Controller
      */
     public function store(StoreFeatureRequest $request)
     {
-        //
+      
+        $data=$request->validated();
+        Feature::create($data);
+        return redirect()->route("{$this->path}index")->with('success', 'Feature created successfully');
     }
 
     /**
@@ -43,7 +46,7 @@ class FeatureController extends Controller
      */
     public function show(Feature $feature)
     {
-        //
+        return view("{$this->path}show", get_defined_vars());
     }
 
     /**
@@ -51,7 +54,8 @@ class FeatureController extends Controller
      */
     public function edit(Feature $feature)
     {
-        //
+        return view("{$this->path}edit", get_defined_vars());
+        
     }
 
     /**
@@ -59,7 +63,9 @@ class FeatureController extends Controller
      */
     public function update(UpdateFeatureRequest $request, Feature $feature)
     {
-        //
+        $data = $request->validated();
+        $feature->update($data);
+        return redirect()->route("{$this->path}index")->with('success', 'Feature updated successfully');
     }
 
     /**
@@ -67,6 +73,7 @@ class FeatureController extends Controller
      */
     public function destroy(Feature $feature)
     {
-        //
+        $feature->delete();
+        return redirect()->route("{$this->path}index")->with('success', 'Service deleted successfully');
     }
 }

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreFeatureRequest extends FormRequest
+class UpdateMesssageRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,18 +22,7 @@ class StoreFeatureRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['required', 'string', 'max:255'],
-            'description' => ['required', 'string'],
-            'icon' => ['required', 'string'],
+            //
         ];
-    }
-
-    public function attributes(): array
-    {
-    return [
-        'title'=>__('keywords.title'),
-        'description' => __('keywords.description'),
-        'icon' => __('keywords.icon'),
-    ];
     }
 }
