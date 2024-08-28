@@ -16,7 +16,6 @@ class TestmonialSeeder extends Seeder
         for ($i = 0; $i < 10; $i++) {
             Testmonial::create([
                 'name' =>fake()->name(),
-                'image' => fake()->imageUrl(200, 200),
                 'description' => fake()->paragraph,
                 'position' => fake()->sentence(3),
             ]);

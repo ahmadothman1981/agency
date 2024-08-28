@@ -32,13 +32,15 @@
             <x-side-bar-tab href="{{ route('admin.services.index') }}" 
             icon="fe fe-codesandbox" name="{{ __('keywords.services') }}"></x-side-bar-tab>
             <x-side-bar-tab href="{{ route('admin.features.index') }}" 
-            icon="fe fe-codesandbox" name="{{ __('keywords.features') }}"></x-side-bar-tab>
+            icon="fe fe-package" name="{{ __('keywords.features') }}"></x-side-bar-tab>
             <x-side-bar-tab href="{{ route('admin.messages.index') }}" 
             icon="fe fe-message-square" name="{{ __('keywords.messages') }}"></x-side-bar-tab>
             <x-side-bar-tab href="{{ route('admin.subscribers.index') }}" 
             icon="fe fe-users" name="{{ __('keywords.subscribers') }}"></x-side-bar-tab>
             <x-side-bar-tab href="{{ route('admin.testmonials.index') }}" 
-            icon="fe fe-users" name="{{ __('keywords.testmonials') }}"></x-side-bar-tab>
+            icon="fe-check-square" name="{{ __('keywords.testmonials') }}"></x-side-bar-tab>
+            <x-side-bar-tab href="{{ route('admin.settings.index') }}" 
+            icon="fe-settings" name="{{ __('keywords.settings') }}"></x-side-bar-tab>
           
           </ul>
 

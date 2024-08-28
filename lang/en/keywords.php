@@ -54,5 +54,18 @@ return [
     'Image file not found' => 'Image file not found',
     'edit_testmonial' => 'Edit Testmonial',
     'Testmonial updated successfully'=>'Testmonial updated successfully',
+    'Setting updated successfully'=>'Setting updated successfully',
+    'settings' => 'Settings',
+    'setting' => 'Setting',
+    'facebook' => 'Facebook',
+    'twitter' => 'Twitter',
+    'instagram' => 'Instagram',
+    'youtube' => 'Youtube',
+    'phone' => 'Phone',
+    'address' => 'Address',
+   'linkedin' => 'Linkedin',
+   'edit_settings' => 'Edit Settings',
+   
+
     
 ];
