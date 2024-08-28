@@ -16,9 +16,11 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 */
 Route::name('front.')->controller(FrontController::class)->group(function () {
     Route::get('/', 'index')->name('index');
+    Route::post('/subscribe', 'subscribe')->name('subscribe.store');
     Route::get('/about', 'about')->name('about');
     Route::get('/service', 'service')->name('service');
     Route::get('/contact', 'contact')->name('contact');
+    Route::post('/contact/store', 'contactstore')->name('contact.store');
 });
 /*
 |--------------------------------Admin Routes----------------------------------------------------------
