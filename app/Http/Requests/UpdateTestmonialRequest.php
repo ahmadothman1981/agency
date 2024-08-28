@@ -22,7 +22,19 @@ class UpdateTestmonialRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => ['required', 'string', 'max:255'],
+            'position' => ['required', 'string', 'max:255'],
+            'image' => ['required', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
+            'description' => ['required', 'string'],
         ];
+    }
+    public function attributes(): array
+    {
+    return [
+        'name'=>__('keywords.name'),
+        'position' => __('keywords.position'),
+        'description' => __('keywords.description'),
+        'image' => __('keywords.image'),
+    ];
     }
 }

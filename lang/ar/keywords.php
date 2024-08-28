@@ -48,4 +48,10 @@ return [
     'testmonials' => 'الشهادات',
     'position' => 'المنصب',
     'image' => 'الصورة',
+    'add_new_testmonial' => 'اضافة شهادة',
+    'testmonial'=>'شهادة',
+    'Testmonial deleted successfully'=>'تم حذف الشهادة بنجاح',
+    'Image file not found' => 'لم يتم العثور على ملف الصورة',
+    'edit_testmonial' => 'تعديل الشهادة',
+    'Testmonial updated successfully'=>'تم تحديث الشهادة بنجاح',
 ];

@@ -27,7 +27,7 @@ class TestmonialController extends Controller
      */
     public function create()
     {
-        //
+        return view("{$this->path}create");
     }
 
     /**
@@ -35,7 +35,16 @@ class TestmonialController extends Controller
      */
     public function store(StoreTestmonialRequest $request)
     {
-        //
+        
+        $data=$request->validated();
+        //save image
+        $image = $request->file('image');
+        $newImageName = time() . '-' . $image->getClientOriginalName();
+        $image->storeAs('testmonials', $newImageName,'public');
+        $data['image'] = $newImageName;
+
+        Testmonial::create($data);
+        return redirect()->route("{$this->path}index")->with('success', 'Testmonial created successfully');
     }
 
     /**
@@ -43,7 +52,7 @@ class TestmonialController extends Controller
      */
     public function show(Testmonial $testmonial)
     {
-        //
+        return view("{$this->path}show", get_defined_vars());
     }
 
     /**
@@ -51,7 +60,7 @@ class TestmonialController extends Controller
      */
     public function edit(Testmonial $testmonial)
     {
-        //
+        return view("{$this->path}edit", get_defined_vars());
     }
 
     /**
@@ -59,7 +68,27 @@ class TestmonialController extends Controller
      */
     public function update(UpdateTestmonialRequest $request, Testmonial $testmonial)
     {
-        //
+        $data = $request->validated();
+
+    if ($request->hasFile('image')) {
+        // Delete the old image if it exists
+        if ($testmonial->image) {
+            $oldImagePath = public_path("storage/testmonials/{$testmonial->image}");
+            if (file_exists($oldImagePath)) {
+                unlink($oldImagePath);
+            }
+        }
+
+        // Store the new image
+        $newImageName = time() . '-' . $request->image->getClientOriginalName();
+        $request->image->storeAs('testmonials', $newImageName, 'public');
+        $data['image'] = $newImageName;
+    }
+
+    // Update the testimonial with the new data
+    $testmonial->update($data);
+
+    return redirect()->route("{$this->path}index")->with('success', 'Testimonial updated successfully');;
     }
 
     /**
@@ -67,6 +96,16 @@ class TestmonialController extends Controller
      */
     public function destroy(Testmonial $testmonial)
     {
-        //
+        if($testmonial->image){
+            $imagePath = public_path("storage/testmonials/{$testmonial->image}");
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }else{
+                return redirect()->route("{$this->path}index")->with('error', 'Image file not found.');
+                 }
+           
+        }
+        $testmonial->delete();
+        return redirect()->route("{$this->path}index")->with('success', 'Testmonial deleted successfully');
     }
 }

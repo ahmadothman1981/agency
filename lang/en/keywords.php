@@ -48,5 +48,11 @@ return [
     'testmonials'=>'Testmonials',
     'position' => 'Position',
     'image' => 'Image',
+    'add_new_testmonial' => 'Add New Testmonial',
+    'testmonial'=>'Testmonial',
+    'Testmonial deleted successfully'=>'Testmonial deleted successfully',
+    'Image file not found' => 'Image file not found',
+    'edit_testmonial' => 'Edit Testmonial',
+    'Testmonial updated successfully'=>'Testmonial updated successfully',
     
 ];
