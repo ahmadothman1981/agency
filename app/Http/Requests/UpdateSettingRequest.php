@@ -23,7 +23,7 @@ class UpdateSettingRequest extends FormRequest
     {
         return [
            'address' => ['required', 'string', 'max:255'],
-           'phone' => ['required', 'numeric'],
+           'phone' => ['required', 'string'],
            'email' => ['required', 'email', 'max:255'],
            'facebook' => ['required', 'url', 'max:255'],
            'twitter' => ['required', 'url', 'max:255'],
